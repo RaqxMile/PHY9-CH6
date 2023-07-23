@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chapter 6 - Physics - Class 9</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-image: url('background.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 42px;
+      color: #0066cc;
+      text-shadow: 2px 2px 4px #888;
+    }
+
+    h2 {
+      font-size: 24px;
+      color: #0099cc;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 20px 0;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .button {
+      font-size: 16px;
+      font-weight: bold;
+      background-color: #00D4FF;
+      color: #fff;
+      box-shadow: 2px 2px 4px #888;
+      border: none;
+      border-radius: 25px;
+      padding: 12px 30px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .button:hover {
+      background-color: #00a5cc;
+    }
+
+    .image-container {
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden;
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto;
+      border: 2px solid #fff;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .image {
+      width: 100%;
+      height: auto;
+      display: none; /* Initially hide the images */
+      transition: transform 0.5s ease;
+    }
+
+    .popup {
+      animation: popupAnimation 0.5s ease;
+      transform-origin: center;
+    }
+
+    @keyframes popupAnimation {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* Responsive Styles for Mobile Screens */
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 36px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      .button {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+    }
+    #io {
+      
+      font-size: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Chapter 6 - Physics - Class 9</h1>
+    <p id="io">By Rana Abdul Qayyum</p>
+    <hr>
+    <p>Your Time Limit for the Objective Part is 15 minutes.<br>Press the button to display the Multiple Choice Questions (MCQs).</p>
+    <div class="button-container">
+      <button class="button" onclick="displayObj()">Objective</button>
+    </div>
+    <hr>
+    <div class="image-container">
+      <img src="https://i.imgur.com/2OgBbyP.jpeg" alt="Objective Image 1" class="image obj1" id="obj1">
+      <img src="https://i.imgur.com/S6ekH2k.jpeg" alt="Objective Image 2" class="image obj2" id="obj2">
+    </div>
+    <hr>
+    <p>Now, to attempt the Short Questions, press the given button.</p>
+    <div class="button-container">
+      <button class="button" onclick="displayShorts()">Shorts</button>
+    </div>
+    <hr>
+    <div class="image-container">
+      <img src="https://i.imgur.com/wKKIEZf.jpeg" class="image shorts1" id="shorts1" alt="Shorts Image 1">
+      <img src="https://i.imgur.com/XBEgIGP.jpeg" id="shorts2" class="image shorts2" alt="Shorts Image 2">
+    </div>
+    <hr>
+    <p>To display the Long Questions, press the given button.</p>
+    <div class="button-container">
+      <button class="button" onclick="displayLong()">Long Questions</button>
+    </div>
+    <hr>
+    <div class="image-container">
+      <img src="https://i.imgur.com/KLGgQjF.jpeg" id="long" class="image" alt="Long Question Image">
+    </div>
+  </div>
+
+  <script>
+    function displayObj() {
+      var obj1 = document.getElementById('obj1');
+      var obj2 = document.getElementById('obj2');
+      var shorts1 = document.getElementById('shorts1');
+      var shorts2 = document.getElementById('shorts2');
+      var longs = document.getElementById('long');
+
+      // Hide other images
+      shorts1.style.display = 'none';
+      shorts2.style.display = 'none';
+      longs.style.display = 'none';
+
+      // Toggle display of objective images with popup animation
+      obj1.style.display = obj1.style.display === 'block' ? 'none' : 'block';
+      obj1.classList.toggle('popup');
+      obj2.style.display = obj2.style.display === 'block' ? 'none' : 'block';
+      obj2.classList.toggle('popup');
+    }
+
+    function displayShorts() {
+      var obj1 = document.getElementById('obj1');
+      var obj2 = document.getElementById('obj2');
+      var shorts1 = document.getElementById('shorts1');
+      var shorts2 = document.getElementById('shorts2');
+      var longs = document.getElementById('long');
+
+      // Hide other images
+      obj1.style.display = 'none';
+      obj2.style.display = 'none';
+      longs.style.display = 'none';
+
+      // Toggle display of shorts images with popup animation
+      shorts1.style.display = shorts1.style.display === 'block' ? 'none' : 'block';
+      shorts1.classList.toggle('popup');
+      shorts2.style.display = shorts2.style.display === 'block' ? 'none' : 'block';
+      shorts2.classList.toggle('popup');
+    }
+
+    function displayLong() {
+      var obj1 = document.getElementById('obj1');
+      var obj2 = document.getElementById('obj2');
+      var shorts1 = document.getElementById('shorts1');
+      var shorts2 = document.getElementById('shorts2');
+      var longs = document.getElementById('long');
+
+      // Hide other images
+      obj1.style.display = 'none';
+      obj2.style.display = 'none';
+      shorts1.style.display = 'none';
+      shorts2.style.display = 'none';
+
+      // Toggle display of long image with popup animation
+      longs.style.display = longs.style.display === 'block' ? 'none' : 'block';
+      longs.classList.toggle('popup');
+    }
+  </script>
+</body>
+</html>
